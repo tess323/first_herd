@@ -21,6 +21,13 @@ app.get('/db_test', function(req,res){
 	res.render('db_test');
 });
 
+app.use('/scraping', function(req, res){
+	res.render('scraping');
+});
+
+app.use('/scraping', require('./controllers/scraping'));
+
+
 var port = 3000;
 app.listen(port, function() {
   console.log("You're listening to the smooth sounds of port " + port);

@@ -8,6 +8,8 @@
 		  client_id: 'YOUR_CLIENT_ID'
 		});
 
+		// this is not displaying on the screen
+
 		var track_url = 'http://soundcloud.com/forss/flickermood';
 		SC.oEmbed(track_url, { auto_play: true }).then(function(oEmbed) {
 		  console.log('oEmbed response: ', oEmbed);
@@ -15,6 +17,9 @@
 		</script>
 </head>
 <body>
+<div class="well">
+	<h1>Testing...</h1>
+</div>
 
 </body>
 </html>
