@@ -1,0 +1,35 @@
+<!-- login using the soundcloud api -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+	<script>
+		SC.initialize({
+  		client_id: '5cf04062a450048534698b4374a8ae62',
+  		redirect_uri: 'http://localhost:3000'
+		});
+
+// initiate auth popup
+		SC.connect().then(function() {
+		  return SC.get('/me');
+		}).then(function(me) {
+		  alert('Hello, ' + me.username);
+		});
+		// embed player
+		var track_url = 'http://soundcloud.com/forss/flickermood';
+		SC.oEmbed(track_url, { auto_play: true }).then(function(oEmbed) {
+		 console.log('oEmbed response: ', oEmbed);
+		});
+</script>
+
+	</script>
+</head>
+<body>
+<div class="well">
+	<h1>Pitchfork</h1>
+</div>
+
+</body>
+</html>
