@@ -21,8 +21,43 @@ app.get('/db_test', function(req,res){
 	res.render('db_test');
 });
 
+var session = require('express-session');
+app.use(session({
+	secret:"shhhhhhhh",
+	resave: false,
+	saveUninitialized: true
+}));
+
+app.use(function(req,res,next){
+	if(req.session.user){
+		db.user.findById(req.session.user).then(function(user){
+			if(user) {
+				req.currentUser = user;
+				next();
+			} else {
+				req.currentUser = false;
+				next();
+			}
+		});
+	} else {
+			req.currentUser = false;
+			next();
+
+		}		
+});
+
+var flash = require('connect-flash');
+app.use(flash());
+
+app.use(function(req, res, next){
+	res.locals.currentUser = req.currentUser;
+	res.locals.alerts = req.flash();
+	next()
+});
 
 app.use('/scraping', require('./controllers/scraping'));
+app.use('/signup', require('./controllers/login'));
+
 
 
 var port = 3000;

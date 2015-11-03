@@ -1,4 +1,14 @@
-<div class="well">
-	<h1>Song List</h1>
+<!-- <h1>Song List</h1>
+
+
+<!-- <div class="well">
 	<%= data.Jeremih %>
-</div>
+</div> -->
+
+
+<% data.for(key in object){ %>
+	<div class="well">
+	<h2><%= data.key %>
+	<%= data.value %></h2>
+	</div>
+<% }; %>
