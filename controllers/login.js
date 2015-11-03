@@ -25,7 +25,7 @@ router.route('/')
 				defaults: {
 					email: req.body.email,
 					password: req.body.password,
-					name: req.body.name,
+					name: req.body.username,
 				}
 			}).spread(function(user,created){
 				if(created){
