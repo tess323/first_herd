@@ -21,9 +21,6 @@ app.get('/db_test', function(req,res){
 	res.render('db_test');
 });
 
-app.use('/scraping', function(req, res){
-	res.render('scraping');
-});
 
 app.use('/scraping', require('./controllers/scraping'));
 
