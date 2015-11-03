@@ -9,19 +9,44 @@ var app = express();
 // pull the artist and tracks from pitchfork
 
 router.get('/', function(req,res){
-	request('http://pitchfork.com/best/', function(err, resp,html){
-		if(!err && resp.statusCode === 200){
-			var parsedHTML = $.load(html)
-			var textArray = []
-			console.log('******'+parsedHTML);
-			parsedHTML('.info').map(function(i, info){
-				var text = $(info).text()
-				if(!(text)) return
-				textArray.push(text)
-			})
-			res.send('hi');
-		}
-	})
+		request('http://pitchfork.com/reviews/best/tracks/', function(error,response,data){
+		if(!error && response.statusCode == 200){
+		var $ = cheerio.load(data);
+		var newObj = {};
+			// This turns the array method splice into a string method.
+		function stringClean(str, index, count) {
+		 var ar = str.split('');
+		 ar.splice(index, count);
+		 return ar.join('');
+		};
+			// This cleans data of whitespace and colons.
+		var cleanArtist = function(obj){
+	   		var tempObj = {};
+	   		for (key in obj) {
+	       		for (var i = 0; i < key.length; i++) {
+	           		if (key[i] === ':'){
+	               	tempObj[stringClean(key, i, 1).trim()] = obj[key];
+	           		};  
+	       		};
+	    
+	   		}
+	   		return (tempObj);
+		};
+
+		$('span.artist').each(function(index, element){
+			var value = element.next.next.children[0].data.trim();
+			var key = element.children[0].data.trim()
+			var newValue = value.replace(/"/g,"");
+			var newKey = key.replace(/"/g,"");
+			newObj[newKey] = newValue
+		});
+		console.log(cleanArtist(newObj));
+		// res.send(cleanArtist(newObj))
+		res.render('scraping', {data:(cleanArtist(newObj))});
+	}
+	});
+
+
 });
 
 
