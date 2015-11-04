@@ -6,10 +6,25 @@
   <script src="//code.jquery.com/jquery.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
  
-  <title></title>
+  <title>Herd</title>
 </head>
 <body>
 <div class="container">
+<nav class="navbar navbar-default">
+		<div class="navbar-header">
+			<p class="navbar-brand">
+				<a href="/">Herd</a>
+			</p>
+		</div>
+		<ul class="nav navbar-nav navbar-right ">
+			<% if (currentUser) { %>
+				<li><a href="/logout">Logout</a></li>
+			<% }  else { %>
+				<li><a href="/applogin">Login</a></li>
+				<li><a href="/signup">Signup</a></li>
+			<% } %>
+		</ul>
+	</nav>
   <%- body %>
   <% include alerts %>
 </div>

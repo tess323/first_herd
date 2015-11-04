@@ -3,30 +3,21 @@ var ejsLayouts = require('express-ejs-layouts');
 var request = require('request');
 var bodyParser = require('body-parser');
 var app = express();
+var db =(require('./models'));
+
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 app.use(express.static(__dirname + '/static'));
 app.use(bodyParser.urlencoded({extended: false}));
-
-app.get('/', function(req, res) {
-  res.render('index');
-});
-
-app.get('/login', function(req,res){
-	res.render('login');
-});
-
-app.get('/db_test', function(req,res){
-	res.render('db_test');
-});
-
 var session = require('express-session');
+
 app.use(session({
 	secret:"shhhhhhhh",
 	resave: false,
 	saveUninitialized: true
 }));
+
 
 app.use(function(req,res,next){
 	if(req.session.user){
@@ -55,8 +46,26 @@ app.use(function(req, res, next){
 	next()
 });
 
+app.get('/', function(req, res) {
+  res.render('index');
+});
+
+app.get('/login', function(req,res){
+	res.render('login');
+});
+
+app.get('/db_test', function(req,res){
+	res.render('db_test');
+});
+
+
+
+
+
 app.use('/scraping', require('./controllers/scraping'));
-app.use('/signup', require('./controllers/login'));
+app.use('/signup', require('./controllers/signup'));
+app.use('/applogin', require('./controllers/login'));
+
 
 
 
