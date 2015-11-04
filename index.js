@@ -75,6 +75,6 @@ app.use('/applogin', require('./controllers/login'));
 // app.listen(port, function() {
 //   console.log("You're listening to the smooth sounds of port " + port);
 // });
-app.listen(process.env.PORT || 3000){
+app.listen(process.env.PORT || 3000)
 // 	console.log('youre listening to the smooth sounds of port '+port);
 // });
