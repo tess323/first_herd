@@ -5,7 +5,7 @@
 	<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
 		<script>
 		SC.initialize({
-		  client_id: 'YOUR_CLIENT_ID'
+		  client_id: '5cf04062a450048534698b4374a8ae62'
 		});
 
 		// this is not displaying on the screen
@@ -14,11 +14,16 @@
 		SC.oEmbed(track_url, { auto_play: true }).then(function(oEmbed) {
 		  console.log('oEmbed response: ', oEmbed);
 		});
+
+
+		// SC.Widget(document.querySelector('iframe')|iframeElementID*/)
 		</script>
 </head>
 <body>
 <div class="well">
 	<h1>Testing...</h1>
+	<div id="player">
+	</div>
 </div>
 
 </body>

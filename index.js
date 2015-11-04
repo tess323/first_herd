@@ -59,6 +59,10 @@ app.get('/db_test', function(req,res){
 	res.render('db_test');
 });
 
+app.get('/callback', function(req, res) {
+	res.render('callback');
+});
+
 
 
 
