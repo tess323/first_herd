@@ -1,14 +1,12 @@
-<!-- <h1>Song List</h1>
+<h1>Pitchfork's Newest</h1>
 
-
-<!-- <div class="well">
-	<%= data.Jeremih %>
-</div> -->
-
-
-<% data.for(key in object){ %>
+<% for(key in data){ %>
 	<div class="well">
-	<h2><%= data.key %>
-	<%= data.value %></h2>
+	<h2><%= key %>: 
+	<%= data[key] %></h2>
+	  <input type="hidden" value="<%= data.key %>" name="year">
+  	<input type="hidden" value="<%= data.value %>" name="title">
+  	<input type="submit" class="btn btn-success" value="Add to Favorites">
+
 	</div>
 <% }; %>
