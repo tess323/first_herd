@@ -5,6 +5,7 @@ var cheerio = require('cheerio');
 // var $ = cheerio.load;
 var express = require('express');
 var app = express();
+var db =(require('../models'));
 
 // pull the artist and tracks from pitchfork
 
@@ -49,6 +50,32 @@ router.get('/', function(req,res){
 
 });
 
+router.post('/', function(req,res){
+	db.user.findById(req.currentUser.id).then(function(user){
+		user.createFavorite({
+			artist:req.body.artist,
+			song:req.body.song
+		}).then(function(favorite){
+			console.log(favorite.get());
+		});
+	});
+
+
+	// db.user.findById(req.currentUser.id).then(function(user){
+
+	// db.favorite.findOrCreate({
+	// 		where:{
+	// 			artist:
+	// 		},
+	// 		defaults: {
+	//       		song: 
+	//       		userId:
+	//     }
+	//   }).spread(function(favorite, created) {
+	//     console.log(favorite.get());
+	//     res.redirect('/');
+	//   });
+	});
 
 
 

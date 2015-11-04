@@ -4,9 +4,11 @@
 	<div class="well">
 	<h2><%= key %>: 
 	<%= data[key] %></h2>
-	  <input type="hidden" value="<%= data.key %>" name="year">
-  	<input type="hidden" value="<%= data.value %>" name="title">
+	
+	<form method="POST" action="/scraping">
+	  <input type="hidden" value="<%= key %>" name="artist">
+  	<input type="hidden" value="<%= data[key] %>" name="song">
   	<input type="submit" class="btn btn-success" value="Add to Favorites">
-
+  	</form>
 	</div>
 <% }; %>

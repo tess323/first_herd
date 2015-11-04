@@ -20,6 +20,7 @@ app.use(session({
 
 
 app.use(function(req,res,next){
+	req.session.user = 4;
 	if(req.session.user){
 		db.user.findById(req.session.user).then(function(user){
 			if(user) {
@@ -65,6 +66,7 @@ app.get('/db_test', function(req,res){
 app.use('/scraping', require('./controllers/scraping'));
 app.use('/signup', require('./controllers/signup'));
 app.use('/applogin', require('./controllers/login'));
+
 
 
 
