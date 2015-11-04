@@ -1,16 +1,12 @@
 <h1>Playlist</h1>
 
-<% favorites.forEach(function(song) { %>
-  <!-- <div class="well">
-    <p><%= comment.text %></p>
-    <p><strong><%= comment.author %></strong></p>
-  </div> -->
+<% favorites.forEach(function(favorite) { %>
   <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSA_xRUKN4WlG4HEmCo4m_TWk9L-vPrKi8f2Iewva5qtbzy_Gb2" alt="...">
       <div class="song">
-        <h3>Thumbnail label</h3>
+        <h3><%= favorite.song %></h3>
         <p>...</p>
         <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
       </div>

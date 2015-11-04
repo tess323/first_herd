@@ -63,22 +63,19 @@ app.get('/callback', function(req, res) {
 	res.render('callback');
 });
 
-
+// app.get('/favorites', function(req, res) {
+// 	res.render('favorites');
+// });
 
 
 
 app.use('/scraping', require('./controllers/scraping'));
 app.use('/signup', require('./controllers/signup'));
 app.use('/applogin', require('./controllers/login'));
+app.use('/favorites', require('./controllers/favorites'));
 
 
 
 
 
-// var port = 3000;
-// app.listen(port, function() {
-//   console.log("You're listening to the smooth sounds of port " + port);
-// });
 app.listen(process.env.PORT || 3000)
-// 	console.log('youre listening to the smooth sounds of port '+port);
-// });
