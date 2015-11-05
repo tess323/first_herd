@@ -1,11 +1,9 @@
 <h1>Pitchfork's Newest</h1>
 
 <% for(key in data){ %>
-	<div class="well">
+	<div class="ul">
 	<h2><%= key %>: 
-	<%= data[key] %></h2>
-	
-	<form method="POST" action="/scraping">
+	<%= data[key] %></h2><form method="POST" action="/scraping">
 	  <input type="hidden" value="<%= key %>" name="artist">
   	<input type="hidden" value="<%= data[key] %>" name="song">
   	<input type="submit" class="btn btn-success" value="Add to Favorites">

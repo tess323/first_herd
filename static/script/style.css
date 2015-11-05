@@ -1,4 +1,53 @@
 body{
-	background-color: #16a085;
-	color: #f1c40f
+	background-color: #34495e;
+	color: #f1c40f;
+}
+
+/*#wrapper{
+	background-image:url('http://i.imgur.com/11CBISy.jpg');
+
+}*/
+/*
+#landing{
+	background-image:url('http://i.imgur.com/11CBISy.jpg');
+}
+*/
+nav{
+	color:#bdc3c7;
+	background-color: red;
+	opacity: 0.5;
+	font-size: 20px;
+	margin-right: 10px
+}
+
+
+
+#arrow{
+	font-size: 100px;
+	text-align:center;
+	margin-top: 200px;
+	margin-right:200px;
+	
+}
+
+.headlines{
+	text-align:center;
+	color: #95a5a6;
+	margin-top:200px;
+	
+}
+
+#artist{
+	background:#34495e;
+	border:black, solid;
+
+}
+
+#player{
+	background-color: green;
+	border:black, solid;
+
+}
+#photo{
+	background-color: blue;
 }

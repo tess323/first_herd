@@ -8,12 +8,13 @@
   <script type="text/javascript" src = 'script/soundcloud.js'></script>
   <script type="text/javascript" src = 'script/script.js'></script>
   <link rel="stylesheet" type="text/css" href="script/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
  
   <title>Herd</title>
 </head>
 <body>
-<div class="container">
-<nav class="navbar navbar-default">
+<div class="container-fluid">
+<nav class="navbar navbar-default" id = 'nav'>
 		<div class="navbar-header">
 			<p class="navbar-brand">
 				<a href="/">Herd</a>
@@ -28,7 +29,11 @@
 			<% } %>
 		</ul>
 	</nav>
+ 
+<!-- <div class="container-fluid"> -->
   <%- body %>
+<!-- </div> -->
+
   <% include alerts %>
 </div>
 <!-- <script type="text/javascript" src="/js/script.js"></script> -->
