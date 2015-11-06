@@ -1,5 +1,6 @@
 
 
+    
 <div id="carousel-example" class="carousel slide" data-ride="carousel">
     <div class="row">
         <div class="col-xs-offset-3 col-xs-6">
@@ -17,17 +18,16 @@
 	                <div class="item">
 	                    <div class="carousel-content">
 	                        <div>
-	                            <strong><h2><%= key %> : <%= data[key] %></h2>
+	                           <h2><%= key %> : <%= data[key] %></h2>
 	                            <form method="POST" action="/scraping">
 									<input type="hidden" value="<%= key %>" name="artist">
-							  		<input type="hidden" value="<%= data[key] %>" name="song"></strong>
-							  		<a href="#" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-heart"></span> Listen</a>
+							  		<input type="hidden" value="<%= data[key] %>" name="song">
+							  		<button type="submit" class="btn btn-lg btn-danger" id="heart"><span class="glyphicon glyphicon-heart" ></span> Listen</button>
 							  	</form>
 							</div>
 	                    </div>
 	                </div>
 				<% }; %>
-				
         	</div>
         </div>
     </div>
@@ -37,6 +37,7 @@
  <a class="right carousel-control" href="#carousel-example" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
+
 
 
 
@@ -61,5 +62,4 @@
         });
     }</script>
 
-     <footer><a href="/favorites/1"><span class="glyphicon glyphicon-menu-down"  id ='arrow' aria-hidden="true"</span>
-</div> </footer>
+<!-- </div>  -->
