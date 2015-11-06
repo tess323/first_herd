@@ -56,7 +56,7 @@ router.post('/', function(req,res){
 			artist:req.body.artist,
 			song:req.body.song
 		}).then(function(favorite){
-			console.log(favorite.get());
+			res.redirect('favorites/'+favorite.id);
 		});
 	});
 

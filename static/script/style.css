@@ -1,23 +1,16 @@
 body{
-	background-color: #34495e;
+	background-color: #16a085;
 	color: #f1c40f;
+	font-family: 'Ubuntu';
+	font-size: 4em;
 }
 
-/*#wrapper{
-	background-image:url('http://i.imgur.com/11CBISy.jpg');
-
-}*/
-/*
-#landing{
-	background-image:url('http://i.imgur.com/11CBISy.jpg');
-}
-*/
 nav{
 	color:#bdc3c7;
 	background-color: red;
 	opacity: 0.5;
 	font-size: 20px;
-	margin-right: 10px
+	
 }
 
 
@@ -25,29 +18,41 @@ nav{
 #arrow{
 	font-size: 100px;
 	text-align:center;
-	margin-top: 200px;
+	margin-top: 150px;
 	margin-right:200px;
 	
 }
+.carousel-content {
+    color:black;
+    display:flex;
+    align-items:center;
+}
 
-.headlines{
+#headlines{
+	font-size: 300px;
 	text-align:center;
 	color: #95a5a6;
-	margin-top:200px;
+	margin-top: 100px;
+
 	
 }
 
 #artist{
-	background:#34495e;
-	border:black, solid;
-
+	padding:0;
+	margin:0;
 }
-
+#container{
+	padding-right: 0;
+	height:20px;
+}
 #player{
-	background-color: green;
-	border:black, solid;
+	padding: 0;
+	margin:0;
+	height:70px;
 
 }
 #photo{
 	background-color: blue;
 }
+
+/**/

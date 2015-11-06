@@ -1,4 +1,6 @@
 <script src="//code.jquery.com/jquery.js"></script>
+
+<% if (favorites){ %>
 <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
 
 <script>SC.initialize({
@@ -6,21 +8,15 @@
     });</script>
 
 
-<div class="container-fluid">
+<!-- <div class="container-fluid"> -->
     <div class="row">
-        <div class="col-lg-6" id = 'artist'>
-          <h1><%= favorites[0].song %></h1>
-          <h2><%= favorites[0].artist %></h2>
-        </div>
-
- <div class="col-lg-6" id = 'player'>
-            <img src="https://snap-photos.s3.amazonaws.com/img-thumbs/960w/DSU2OBEWB3.jpg" class="img-responsive" alt="Image">
-
-      <div class="container" id = 'container'>
+      <div class="col-lg-8" id = 'artist'>
+              <div class="col-lg-12" id = 'container'></div>
+      
         
     <script>
     SC.get('/tracks', {
-      q: '<%= favorites[0].artist %>/<%= favorites[0].song %>'
+      q: '<%= favorites.artist %>/<%= favorites.song %>'
     }).then(function(tracks) {
       console.log(tracks[0].permalink_url);
       SC.oEmbed(tracks[0].permalink_url, {
@@ -32,6 +28,15 @@
     });
       </script>
       </div>
+      <div class="col-lg-4" id = 'player'>
+          <img src="https://snap-photos.s3.amazonaws.com/img-thumbs/960w/DSU2OBEWB3.jpg" class="img-responsive" alt="Image">
+
+
+      </div>
         </div>
+      
     </div>
-</div>
+
+    <% }else{ %>
+    You must pick a track!
+    <% }; %>

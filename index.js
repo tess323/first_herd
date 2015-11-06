@@ -74,6 +74,8 @@ app.use('/scraping', require('./controllers/scraping'));
 app.use('/signup', require('./controllers/signup'));
 app.use('/applogin', require('./controllers/login'));
 app.use('/favorites', require('./controllers/favorites'));
+app.use('/playlist', require('./controllers/playlist'));
+
 
 
 
