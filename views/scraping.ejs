@@ -17,11 +17,11 @@
 	                <div class="item">
 	                    <div class="carousel-content">
 	                        <div>
-	                            <h2><%= key %> : <%= data[key] %></h2>
+	                            <strong><h2><%= key %> : <%= data[key] %></h2>
 	                            <form method="POST" action="/scraping">
 									<input type="hidden" value="<%= key %>" name="artist">
-							  		<input type="hidden" value="<%= data[key] %>" name="song">
-							  		<input type="submit" class="btn btn-success" value="Add to Favorites">
+							  		<input type="hidden" value="<%= data[key] %>" name="song"></strong>
+							  		<a href="#" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-heart"></span> Listen</a>
 							  	</form>
 							</div>
 	                    </div>
@@ -60,3 +60,6 @@
             $(this).css('height',max+'px');
         });
     }</script>
+
+     <footer><a href="/favorites/1"><span class="glyphicon glyphicon-menu-down"  id ='arrow' aria-hidden="true"</span>
+</div> </footer>
